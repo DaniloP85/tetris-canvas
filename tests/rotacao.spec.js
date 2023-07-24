@@ -1,4 +1,4 @@
-import { Rotate } from "./rotacao";
+import { Rotate } from "../src/rotacao";
 
 describe('Rotate the T-piece', () => {
     describe('Should be rotate the T-piece from 0 to 90', () => {
