@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <title>Tetris</title>
+</head>
+
+<body>
+
+  
+  <div id="container">
+    <div id="loading">Loading...</div>
+    <div id="loaded" class="hidden">
+      <div id="main">
+        <div id="user-signed-in" class="hidden">
+
+          <div id="user-info">
+            <div id="photo-container">
+              <img id="photo">
+            </div>
+            <div id="name"></div>
+            <div id="email"></div>
+            <div id="phone"></div>
+            <div id="is-new-user"></div>
+            <div class="clearfix"></div>
+          </div>
+          <p>
+            
+            <button id="delete-account">Delete account</button>
+          </p>
+
+          <div class="flex-container">
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Player's name</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody id="players"></tbody>
+              </table>
+            </div>
+            <div>
+              <canvas id="tetris" width="540" height="592">
+                <p>Canvas not supported</p>
+              </canvas>
+            </div>
+            <div>
+              <h5>how to play</h5>
+              <p>&crarr; hit the enter key to start the game</p>
+              <p>&#x23f8; P key to pause the game</p>
+              <p>&larr; left arrow key, move the piece to the left or the A key</p>
+              <p>&rarr; right arrow key, move the piece to the right or the D key</p>
+              <p>↻ W or up arrow key rotate screen clockwise</p>
+              <p>&darr; Down arrow or S key to move the piece down</p>
+              <p>Space key to go down all missing lines</p>
+              <h5>how to score</h5>
+        
+              <ul>
+                <li>one line: 100 * level</li>
+                <li>two lines: 300 * level </li>
+                <li>three lines: 500 * level</li>
+                <li>four lines: 900 * level</li>
+              </ul>
+              <button id="sign-out">Sign Out</button>
+            </div>
+          </div>
+
+
+        </div>
+        <div id="user-signed-out" class="hidden">
+          <div id="firebaseui-spa">
+            <div id="firebaseui-auth-container"></div>
+          </div>
+        </div>
+      </div>
+
+      
+
+    </div>
+  </div>
+
+  
+
+  
+</body>
+
+</html>

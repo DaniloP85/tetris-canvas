@@ -1,0 +1,29 @@
+canvas {
+  border: 1px solid #ccc;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-container>div {
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+table,
+td {
+  border: 1px solid #000;
+}
+
+#mainscreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: #fff;
+  position: absolute;
+  height: 100%;
+  width: 99%;
+}
