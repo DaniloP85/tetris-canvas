@@ -89,7 +89,7 @@ async function update(id, score) {
 async function getDocumentos(docRef, user) {
   const d = await getDoc(docRef);
 
-  if (!d.exists()){
+  if (!d.exists()) {
     await setDoc(docRef, {
       nickname: user.displayName,
       email: user.email,
@@ -255,7 +255,7 @@ var handleSignedInUser = function (user) {
       document.getElementById('players').innerHTML = '';
 
       querySnapshot.forEach((doc) => {
-        
+
         const color = doc.id === user.uid ? '#FF0' : '#FFF';
         componete.maxScore = doc.data().score;
 

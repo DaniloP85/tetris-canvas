@@ -72,7 +72,7 @@ export class KeyBoard {
             }
         }
     }
-    
+
     constructor(gameArea) {
         this.#gameArea = gameArea;
         for (const key in this.#keys) {
@@ -85,7 +85,7 @@ export class KeyBoard {
         return '#' + parseInt((Math.random() * maxHex)).toString(16).padStart(short ? 3 : 6, '0');
     }
 
-    printKeyBoards = (key, eventKey='keyup') => {
+    printKeyBoards = (key, eventKey = 'keyup') => {
         const { y, x, length, text } = this.#keys[key];
         const lengthSapce = length != 50 ? 50 : length;
         const color = eventKey === 'keydown' ? this.#colorsHexadecimal() : '#FFF';

@@ -68,8 +68,8 @@ export class Componente {
     }
 
     this.score = (this.score + (points[fullLines.length - 1] * this.level));
-        
-    if (this.score > this.maxScore){
+
+    if (this.score > this.maxScore) {
       this.update(this.uid, this.score);
     }
 
