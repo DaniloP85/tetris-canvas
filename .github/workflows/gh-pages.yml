@@ -35,4 +35,4 @@ jobs:
 
     - name: Deploy
       if: success()
-      run: aws s3 sync ./dist/* s3://angular-github-actions-amazon-s3
+      run: aws s3 sync ./dist/* s3://sites-estaticos-dpsnqmk
