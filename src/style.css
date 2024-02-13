@@ -27,3 +27,7 @@ td {
   height: 100%;
   width: 99%;
 }
+
+#user-info, #delete-account{
+  display: none;
+}
