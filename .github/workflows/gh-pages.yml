@@ -1,38 +1,65 @@
-name: GitHub Pages
+name: Deploy to S3
 
 on:
   push:
     branches:
-    - main
+      - main  # ajuste para a branch principal do seu repositório
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # ajuste a versão do Node.js conforme necessário
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run unit tests
+        run: npm test  # ajuste o comando para rodar os testes unitários conforme necessário
+
   deploy:
     runs-on: ubuntu-latest
+    needs: test
+
     steps:
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.ACCESS_KEY }}
-        aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
-        aws-region: sa-east-1
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Checkout
-      uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # ajuste a versão do Node.js conforme necessário
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 14
+      - name: Install dependencies
+        run: npm install
 
-    - name: Install dependencies
-      run: npm install
+      - name: Build project
+        run: npm run build  # ajuste o comando de build conforme necessário
 
-    - name: Run tests
-      run: npm run test
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: 'us-east-1'  # ajuste conforme a região do seu bucket S3
 
-    - name: Build
-      run: npm run build
+      - name: Deploy to S3
+        run: |
+          aws s3 sync ./dist s3://your-bucket-name
 
-    - name: Deploy
-      if: success()
-      run: aws s3 sync ./dist s3://sites-estaticos-dpsnqmk/tetris
+  # Adiciona a verificação de aprovação antes do merge
+  merge-check:
+    runs-on: ubuntu-latest
+    needs: [deploy, test]
+    steps:
+      - name: Check if approved
+        uses: gavinmogan/merge-check@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
