@@ -138,6 +138,8 @@ export class Componente {
         location: location,
         minY: (this.current.minY + 1)
       };
+      console.clear();
+      console.table(this.area)
 
       return true;
     }
