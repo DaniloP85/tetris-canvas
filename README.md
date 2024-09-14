@@ -6,6 +6,10 @@ Tetris challenge with JS, HTML and CSS only
 
 ## Getting Started
 
+```docker build -t tetris-canvas .```
+
+```docker run -d -p 8080:80 tetris-canvas```
+
 ### Dependencies
 
 ### Installing
