@@ -52,4 +52,4 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync ./dist s3://tetris-v1
+          aws s3 sync ./dist s3://bundle-tetris
