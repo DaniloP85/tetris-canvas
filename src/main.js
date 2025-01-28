@@ -66,7 +66,7 @@ const uiConfig = {
 ui.start('#firebaseui-auth-container', uiConfig);
 
 var handleSignedOutUser = function () {
-  console.log('saiu');
+
   document.getElementById('user-signed-in').style.display = 'none';
   document.getElementById('user-signed-out').style.display = 'block';
   ui.start('#firebaseui-auth-container', uiConfig);
@@ -255,9 +255,11 @@ var handleSignedInUser = function (user) {
       document.getElementById('players').innerHTML = '';
 
       querySnapshot.forEach((doc) => {
-
+        
         const color = doc.id === user.uid ? '#FF0' : '#FFF';
-        componete.maxScore = doc.data().score;
+
+        if (doc.id === user.uid)
+          componete.maxScore = doc.data().score;
 
         let tr = document.createElement('tr');
         tr.style.backgroundColor = color;
