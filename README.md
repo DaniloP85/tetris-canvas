@@ -4,6 +4,8 @@ Tetris challenge with JS, HTML and CSS only
 
 ## Description
 
+Adicione login ao seu app da Web com facilidade usando o [FirebaseUI](https://firebase.google.com/docs/auth/web/firebaseui)
+
 ## Getting Started
 
 ```docker build -t tetris-canvas .```
