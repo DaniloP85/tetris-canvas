@@ -21,6 +21,18 @@ jobs:
       - name: Instalar dependências
         run: npm ci
 
+      - name: Buscar credenciais do Firebase via Secrets Manager
+        id: firebase_secrets
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'us-east-1'
+          run: |
+            aws secretsmanager get-secret-value \
+              --secret-id tetris-game/prod/firebase-credentials \
+              --query SecretString \
+              --output text > .env
+
       - name: Build com Webpack
         run: npm run build
 
