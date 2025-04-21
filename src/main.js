@@ -3,6 +3,7 @@ import { Componente } from './Componente';
 import { printScreenGame, random, printScore, printScreenNextPart, tetraminos, printLevel, formatador } from './utils';
 import { Rotate } from './rotacao';
 import { KeyBoard } from './keyBoard';
+import { getFirebaseSecrets } from './getFirebaseSecrets';
 import "./style.css";
 
 import {
@@ -28,6 +29,21 @@ const projectId = process.env.projectId;
 const storageBucket = process.env.storageBucket;
 const messagingSenderId = process.env.messagingSenderId;
 const appId = process.env.appId;
+
+
+
+(async () => {
+    try {
+        const firebaseSecrets = await getFirebaseSecrets();
+
+        console.log("Firebase API Key:", firebaseSecrets.apiKey);
+        console.log("Firebase App ID:", firebaseSecrets.appId);
+        // agora você pode usar as variáveis normalmente!
+
+    } catch (error) {
+        console.error("Erro ao obter secrets:", error);
+    }
+})();
 
 console.log("process.env.apiKey: " ,process.env.apiKey);
 
