@@ -29,6 +29,8 @@ const storageBucket = process.env.storageBucket;
 const messagingSenderId = process.env.messagingSenderId;
 const appId = process.env.appId;
 
+console.log('process: ', process);
+
 const app = firebase.initializeApp({ apiKey, authDomain, projectId, appId, messagingSenderId, storageBucket });
 const auth = firebase.auth(app);
 let ui = new firebaseui.auth.AuthUI(auth);
