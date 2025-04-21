@@ -31,4 +31,3 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 This project is licensed under the MT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
-
