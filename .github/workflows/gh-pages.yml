@@ -1,55 +1,41 @@
-name: Deploy to S3
+name: Deploy Tetris Game to AWS S3
 
 on:
   push:
     branches:
-      - main  # ajuste para a branch principal do seu repositório
+      - main  # deploy sempre que fizer push na main
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'  # ajuste a versão do Node.js conforme necessário
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run unit tests
-        run: npm test  # ajuste o comando para rodar os testes unitários conforme necessário
-
   deploy:
     runs-on: ubuntu-latest
-    needs: test
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
 
-      - name: Install Node.js
-        uses: actions/setup-node@v2
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'  # ajuste a versão do Node.js conforme necessário
+          node-version: '20'  # ajuste se seu projeto usar outra versão
 
-      - name: Install dependencies
-        run: npm install
+      - name: Instalar dependências
+        run: npm ci
 
-      - name: Build project
-        run: npm run build  # ajuste o comando de build conforme necessário
+      - name: Build com Webpack
+        run: npm run build
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: 'us-east-1'  # ajuste conforme a região do seu bucket S3
-
-      - name: Deploy to S3
+      - name: Deploy para S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'us-east-1' # ajuste para sua região
         run: |
-          aws s3 sync ./dist s3://bundle-tetris
+          aws s3 sync ./dist s3://tetris-game-site --delete
+
+      - name: Invalidar cache CloudFront
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'us-east-1'
+        run: |
+          aws cloudfront create-invalidation --distribution-id EYKX28PZXZMPF --paths "/*"
