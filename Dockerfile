@@ -13,18 +13,23 @@ RUN npm install
 # Copy the rest of the application
 COPY . .
 
-# Build the AngularJS application
+# Build the Webpack application
 RUN npm run build
 
-# Use a lightweight base image
+# Use a lightweight base image with NGINX
 FROM nginx:alpine
 
-# Copy built AngularJS files to NGINX default public directory
+# Copy built Webpack files to NGINX default public directory
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Expose port 80
-EXPOSE 80
+# Copy custom NGINX configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Set the environment variable
+ENV LOCALSTACK=true
+
+# Expose port 3000
+EXPOSE 3000
 
 # Start NGINX when the container starts
 CMD ["nginx", "-g", "daemon off;"]
-

@@ -30,23 +30,6 @@ const storageBucket = process.env.storageBucket;
 const messagingSenderId = process.env.messagingSenderId;
 const appId = process.env.appId;
 
-
-
-(async () => {
-    try {
-        const firebaseSecrets = await getFirebaseSecrets();
-
-        console.log("Firebase API Key:", firebaseSecrets.apiKey);
-        console.log("Firebase App ID:", firebaseSecrets.appId);
-        // agora você pode usar as variáveis normalmente!
-
-    } catch (error) {
-        console.error("Erro ao obter secrets:", error);
-    }
-})();
-
-console.log("process.env.apiKey: " ,process.env.apiKey);
-
 const app = firebase.initializeApp({ apiKey, authDomain, projectId, appId, messagingSenderId, storageBucket });
 const auth = firebase.auth(app);
 let ui = new firebaseui.auth.AuthUI(auth);

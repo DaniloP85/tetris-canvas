@@ -1,6 +1,4 @@
-# Tetris
-
-Tetris challenge with JS, HTML and CSS only
+# Tetris JS, HTML and CSS only
 
 ## Description
 
@@ -18,6 +16,8 @@ Adicione login ao seu app da Web com facilidade usando o [FirebaseUI](https://fi
 
 ### Executing program
 
+Caso queria rodar no seu local esse projeto, vc vai precisar ter uma conta na google cloud, para configurar o firebase no projeto
+
 ## Authors
 
 Danilo Santos
@@ -29,5 +29,3 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 ## License
 
 This project is licensed under the MT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
