@@ -3,7 +3,6 @@ import { Componente } from './Componente';
 import { printScreenGame, random, printScore, printScreenNextPart, tetraminos, printLevel, formatador } from './utils';
 import { Rotate } from './rotacao';
 import { KeyBoard } from './keyBoard';
-import { getFirebaseSecrets } from './getFirebaseSecrets';
 import "./style.css";
 
 import {
