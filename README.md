@@ -29,11 +29,3 @@ Lastly, I try to show a little of the logic applied in the game, I used a Matrix
 ## Authors
 
 Danilo Santos [@danilopsnts](https://www.linkedin.com/in/danilopsnts/)
-
-## Contributing
-
-Please read [contributing](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## License
-
-This project is licensed under the MT License - see the [license](LICENSE.md) file for details
