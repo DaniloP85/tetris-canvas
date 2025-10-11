@@ -1,6 +1,10 @@
 # Tetris JS, HTML and CSS only
 
-## Description
+![](readme/git_completo.gif)
+
+## Descricão
+
+A ideia é voltar para a programação mais simples e básica
 
 Adicione login ao seu app da Web com facilidade usando o [FirebaseUI](https://firebase.google.com/docs/auth/web/firebaseui)
 
