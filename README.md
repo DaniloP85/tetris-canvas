@@ -1,9 +1,5 @@
 # Tetris - JS, HTML and CSS only
 
-![](readme/git_completo.gif)
-
-## Description
-
 The idea is to return to the simplest and most basic programming.
 
 At work I do a lot of system integration, not root programming, that which needs to have logic involved, so in my free time I challenge myself to make games.
@@ -12,19 +8,33 @@ This time I made a version of Tetris, it was hard work because I didn't use any 
 
 It took a lot of work and refactoring to get this result.
 
-I was thinking about a differentiator of the very popular game, I was studying Firebase a lot and I found it interesting to use it here in this project, as I didn't need to create a whole infrastructure to have a real-time connection with several users, in fact I wanted one for broadcast, where all users could see each other's scores, in real time, Firebase gives me this easily.
+I was thinking about a differentiator of the very popular game, I was studying [Firebase](https://firebase.google.com) a lot and I found it interesting to use it here in this project, as I didn't need to create a whole infrastructure to have a real-time connection with several users, in fact I wanted one for broadcast, where all users could see each other's scores, in real time, [Firebase](https://firebase.google.com) gives me this easily.
 
-In this first video, I try to show two players playing at the same time and one player watching the other player's score, it almost looks like I'm advertising Firebase
+In this first video, I try to show two players playing at the same time and one player watching the other player's score, it almost looks like I'm advertising [Firebase](https://firebase.google.com)
 
 1. [Tetris + Firebase](https://youtu.be/VisFw1yIg9A)
 
-In this second video, I try to demonstrate the power of the Firebase console, which also works in real time
+In this second video, I try to demonstrate the power of the [Firebase](https://firebase.google.com/) console, which also works in real time
 
 2. [Tetris + Firebase](https://youtu.be/vSHtST2LCVI)
 
 Lastly, I try to show a little of the logic applied in the game, I used a Matrix to control the filled lines and the position of the piece that is coming down, and how I can control how the pieces are filled or not.
 
 3. [Tetris + Console](https://youtu.be/HhMLnEBCfM4)
+
+## Motivation
+
+The challenge started around September 2021, I was studying [Flutter](https://flutter.dev/), it was at that moment that I found a repo in [Flutter](https://flutter.dev/) which was the game tetris and [Flutter](https://flutter.dev/) the game was incomplete and that was where my motivation to build and play was born.
+
+![.](readme/2025-11-07%2012.57.05.jpg)
+
+I don't remember where I got this project from, after configuring the project on my local PC, I realized that it was incomplete and that's why I was motivated to build my own Tetris.
+
+Yes, at that time I used [Ubuntu](https://ubuntu.com/).
+
+## Demonstration
+
+![](readme/git_completo.gif)
 
 ## Authors
 
