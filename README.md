@@ -22,6 +22,10 @@ Lastly, I try to show a little of the logic applied in the game, I used a Matrix
 
 3. [Tetris + Console](https://youtu.be/HhMLnEBCfM4)
 
+## Demonstration
+
+![](readme/git_completo.gif)
+
 ## Motivation
 
 The challenge started around September 2021, I was studying [Flutter](https://flutter.dev/), it was at that moment that I found a repo in [Flutter](https://flutter.dev/) which was the game tetris and [Flutter](https://flutter.dev/) the game was incomplete and that was where my motivation to build and play was born.
@@ -31,10 +35,6 @@ The challenge started around September 2021, I was studying [Flutter](https://fl
 I don't remember where I got this project from, after configuring the project on my local PC, I realized that it was incomplete and that's why I was motivated to build my own Tetris.
 
 Yes, at that time I used [Ubuntu](https://ubuntu.com/).
-
-## Demonstration
-
-![](readme/git_completo.gif)
 
 ## Authors
 
